@@ -1,7 +1,7 @@
-import ckeditor from './../theme/icons/ckeditor.svg';
+import admonition from './../theme/icons/admonition.svg';
 
 export { default as Admonition } from './admonition';
 
 export const icons = {
-	ckeditor
+	admonition
 };

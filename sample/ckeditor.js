@@ -55,7 +55,6 @@ ClassicEditor
 			Base64UploadAdapter
 		],
 		toolbar: [
-			// `myButton` is an example button provided by the `MyPlugin` class.
 			'admonition',
 			'|',
 			'heading',
