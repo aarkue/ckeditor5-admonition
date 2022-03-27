@@ -1,6 +1,13 @@
-@aarkue/ckeditor5-admonition
-============================
+# ckeditor5-admonition 
 
+Adds admonition boxes to ckeditor5.
+They can be inserted using a dedicated toolbar button.
+## Screenshots
+![Screenshot of Admonitions](https://user-images.githubusercontent.com/20766652/160300399-9a683d63-7d98-45ac-9d8c-7520ebf87dc3.png)
+
+
+
+# Plugin Development Content
 This package was created by the [ckeditor5-package-generator](https://www.npmjs.com/package/ckeditor5-package-generator) package.
 
 ## Table of contents
