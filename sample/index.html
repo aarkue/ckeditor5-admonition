@@ -1,68 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="utf-8">
-    <title>CKEditor 5 – Development Sample</title>
-    <style>
-        body {
-            max-width: 800px;
-            margin: 20px auto;
-        }
-    </style>
-</head>
-<body>
+	<head>
+		<meta charset="utf-8" />
+		<title>CKEditor 5 – Development Sample</title>
+		<style>
+			body {
+				max-width: 800px;
+				margin: 20px auto;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>CKEditor 5 – Development Sample</h1>
 
-<h1>CKEditor 5 – Development Sample</h1>
+		<div id="editor">
+			<h2>Development environment</h2>
+			<p>
+				This is a demo of the
+				<a
+					href="https://ckeditor.com/docs/ckeditor5/latest/builds/guides/overview.html#classic-editor"
+					>classic editor build</a
+				>
+				that loads <code>MyPlugin</code>, which is an example plugin
+				produced by the package generator. You can modify this sample
+				and use it to validate whether a plugin or a set of plugins work
+				fine.
+			</p>
+			<p>
+				<code>MyPlugin</code> inserts a text into the editor. You can
+				click the CKEditor 5 icon in the toolbar and see the results.
+			</p>
 
-<div id="editor">
-    <h2>Development environment</h2>
-    <p>
-        This is a demo of the <a href="https://ckeditor.com/docs/ckeditor5/latest/builds/guides/overview.html#classic-editor">classic editor
-        build</a> that loads <code>MyPlugin</code>, which is an example plugin produced by the package generator. You can modify this
-        sample and use it to validate whether a plugin or a set of plugins work fine.
-    </p>
-    <p>
-        <code>MyPlugin</code> inserts a text into the editor. You can click the CKEditor 5 icon in the toolbar and see the results.
-    </p>
+			<h3>Helpful resources</h3>
+			<ul>
+				<li>
+					Architecture
+					<ul>
+						<li>
+							<a
+								href="https://ckeditor.com/docs/ckeditor5/latest/framework/guides/architecture/core-editor-architecture.html"
+								>Core editor architecture</a
+							>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								href="https://ckeditor.com/docs/ckeditor5/latest/framework/guides/architecture/editing-engine.html"
+								>The editing engine</a
+							>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a
+								href="https://ckeditor.com/docs/ckeditor5/latest/framework/guides/architecture/ui-library.html"
+								>The UI library</a
+							>
+						</li>
+					</ul>
+				</li>
 
-    <h3>Helpful resources</h3>
-    <ul>
-        <li>Architecture
-            <ul>
-                <li>
-                    <a href="https://ckeditor.com/docs/ckeditor5/latest/framework/guides/architecture/core-editor-architecture.html">Core editor architecture</a>
-                </li>
-            </ul>
-            <ul>
-                <li>
-                    <a href="https://ckeditor.com/docs/ckeditor5/latest/framework/guides/architecture/editing-engine.html">The editing engine</a>
-                </li>
-            </ul>
-            <ul>
-                <li>
-                    <a href="https://ckeditor.com/docs/ckeditor5/latest/framework/guides/architecture/ui-library.html">The UI library</a>
-                </li>
-            </ul>
-        </li>
+				<li>
+					<a
+						href="https://ckeditor.com/docs/ckeditor5/latest/framework/guides/support/browser-compatibility.html"
+						>Browser compatibility</a
+					>
+				</li>
 
-        <li>
-            <a href="https://ckeditor.com/docs/ckeditor5/latest/framework/guides/support/browser-compatibility.html">Browser compatibility</a>
-        </li>
+				<li>
+					<a
+						href="https://ckeditor.com/docs/ckeditor5/latest/framework/guides/support/error-codes.html"
+						>The error codes</a
+					>
+				</li>
 
-        <li>
-            <a href="https://ckeditor.com/docs/ckeditor5/latest/framework/guides/support/error-codes.html">The error codes</a>
-        </li>
+				<li>
+					<a
+						href="https://ckeditor.com/docs/ckeditor5/latest/builds/guides/development/dll-builds.html"
+						>The DLL builds</a
+					>
+				</li>
+			</ul>
 
-        <li><a href="https://ckeditor.com/docs/ckeditor5/latest/builds/guides/development/dll-builds.html">The DLL builds</a></li>
-    </ul>
+			<h3>The directory structure</h3>
 
-    <h3>The directory structure</h3>
+			<p>The code snippet below presents the directory structure.</p>
 
-    <p>
-        The code snippet below presents the directory structure.
-    </p>
-
-    <pre><code class="language-plaintext">.
+			<pre><code class="language-plaintext">.
 ├─ lang
 │  └─ contexts.json    # Entries used for creating translations.
 ├─ sample
@@ -86,14 +111,108 @@
 ├─ ...
 └─ README.md</code></pre>
 
-    <h3>Reporting issues</h3>
-    <p>If you found a problem with CKEditor 5 or the package generator, please, report an issue:</p>
-    <ul>
-        <li><a href="https://github.com/ckeditor/ckeditor5/issues/new/choose">CKEditor 5</a></li>
-        <li><a href="https://github.com/ckeditor/ckeditor5-package-generator/issues/new">The package generator</a></li>
-    </ul>
-</div>
+			<h3>Reporting issues</h3>
+			<p>
+				If you found a problem with CKEditor 5 or the package generator,
+				please, report an issue:
+			</p>
+			<ul>
+				<li>
+					<a
+						href="https://github.com/ckeditor/ckeditor5/issues/new/choose"
+						>CKEditor 5</a
+					>
+				</li>
+				<li>
+					<a
+						href="https://github.com/ckeditor/ckeditor5-package-generator/issues/new"
+						>The package generator</a
+					>
+				</li>
+			</ul>
+			<div
+				class="admonition default ck-widget"
+				name="default"
+				contenteditable="false"
+			>
+				<h2 class="admonition-title">Default</h2>
+				<div class="admonition-content"><p>&nbsp;</p></div>
+			</div>
+			<div
+				class="admonition note ck-widget"
+				name="note"
+				contenteditable="false"
+			>
+				<h2 class="admonition-title">Note</h2>
+				<div class="admonition-content"><p>&nbsp;</p></div>
+			</div>
+			<div
+				class="admonition todo ck-widget"
+				name="todo"
+				contenteditable="false"
+			>
+				<h2 class="admonition-title">Todo</h2>
+				<div class="admonition-content"><p>&nbsp;</p></div>
+			</div>
+			<div
+				class="admonition check ck-widget"
+				name="check"
+				contenteditable="false"
+			>
+				<h2 class="admonition-title">Check</h2>
+				<div class="admonition-content"><p>&nbsp;</p></div>
+			</div>
+			<div
+				class="admonition help ck-widget"
+				name="help"
+				contenteditable="false"
+			>
+				<h2 class="admonition-title">Help</h2>
+				<div class="admonition-content"><p>&nbsp;</p></div>
+			</div>
+			<div
+				class="admonition tip ck-widget"
+				name="tip"
+				contenteditable="false"
+			>
+				<h2 class="admonition-title">Tip</h2>
+				<div class="admonition-content"><p>&nbsp;</p></div>
+			</div>
+			<div
+				class="admonition example ck-widget"
+				name="example"
+				contenteditable="false"
+			>
+				<h2 class="admonition-title">Example</h2>
+				<div class="admonition-content"><p>&nbsp;</p></div>
+			</div>
+			<div
+				class="admonition quote ck-widget"
+				name="quote"
+				contenteditable="false"
+			>
+				<h2 class="admonition-title">Quote</h2>
+				<div class="admonition-content"><p>&nbsp;</p></div>
+			</div>
+			<div
+				class="admonition danger ck-widget"
+				name="danger"
+				contenteditable="false"
+			>
+				<h2 class="admonition-title">Danger</h2>
+				<div class="admonition-content"><p>&nbsp;</p></div>
+			</div>
+			<div
+				class="admonition warning ck-widget"
+				name="warning"
+				contenteditable="false"
+			>
+				<h2 class="admonition-title">Warning</h2>
+				<div class="admonition-content"><p>&nbsp;</p></div>
+			</div>
+			<p>&nbsp;</p>
+		</div>
 
-<script src="./ckeditor.dist.js"></script>
-</body>
+		<script src="./ckeditor.dist.js"></script>
+	</body>
 </html>
