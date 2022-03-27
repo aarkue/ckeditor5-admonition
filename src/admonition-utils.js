@@ -1,7 +1,6 @@
 export function getRelatedAdmonition( selection ) {
     const viewElement = selection.getSelectedElement();
     if ( viewElement) {
-        console.log({viewElement})
         return viewElement;
     }
 

@@ -2,7 +2,7 @@
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
-		<title>CKEditor 5 – Development Sample</title>
+		<title>CKEditor 5 – Admonition Sample</title>
 		<style>
 			body {
 				max-width: 800px;
@@ -11,7 +11,7 @@
 		</style>
 	</head>
 	<body>
-		<h1>CKEditor 5 – Development Sample</h1>
+		<h1>CKEditor 5 – Admonition Sample</h1>
 
 		<div id="editor">
 			<h2>Development environment</h2>
@@ -26,148 +26,89 @@
 				and use it to validate whether a plugin or a set of plugins work
 				fine.
 			</p>
-			<p>
-				<code>MyPlugin</code> inserts a text into the editor. You can
-				click the CKEditor 5 icon in the toolbar and see the results.
-			</p>
-
-			<h3>Helpful resources</h3>
-			<ul>
-				<li>
-					Architecture
-					<ul>
-						<li>
-							<a
-								href="https://ckeditor.com/docs/ckeditor5/latest/framework/guides/architecture/core-editor-architecture.html"
-								>Core editor architecture</a
-							>
-						</li>
-					</ul>
-					<ul>
-						<li>
-							<a
-								href="https://ckeditor.com/docs/ckeditor5/latest/framework/guides/architecture/editing-engine.html"
-								>The editing engine</a
-							>
-						</li>
-					</ul>
-					<ul>
-						<li>
-							<a
-								href="https://ckeditor.com/docs/ckeditor5/latest/framework/guides/architecture/ui-library.html"
-								>The UI library</a
-							>
-						</li>
-					</ul>
-				</li>
-
-				<li>
-					<a
-						href="https://ckeditor.com/docs/ckeditor5/latest/framework/guides/support/browser-compatibility.html"
-						>Browser compatibility</a
-					>
-				</li>
-
-				<li>
-					<a
-						href="https://ckeditor.com/docs/ckeditor5/latest/framework/guides/support/error-codes.html"
-						>The error codes</a
-					>
-				</li>
-
-				<li>
-					<a
-						href="https://ckeditor.com/docs/ckeditor5/latest/builds/guides/development/dll-builds.html"
-						>The DLL builds</a
-					>
-				</li>
-			</ul>
-
-			<h3>The directory structure</h3>
-
-			<p>The code snippet below presents the directory structure.</p>
-
-			<pre><code class="language-plaintext">.
-├─ lang
-│  └─ contexts.json    # Entries used for creating translations.
-├─ sample
-│  ├─ dll.html         # The editor initialized using the DLL builds. Check README for details.
-│  ├─ index.html       # The currently displayed file.
-│  └─ ckeditor.js      # The editor initialization script.
-├─ src
-│  ├─ index.js         # The modules exported by the package when using the DLL builds.
-│  ├─ myplugin.js      # The plugin that shows the very basic usage of the CKEditor 5 framework.
-│  └─ **/*.js          # All JavaScript source files should be saved here.
-├─ tests
-│  ├─ index.js         # Tests for the plugin.
-│  ├─ myplugin.js
-│  └─ **/*.js          # All tests should be saved here.
-├─ theme
-│  ├─ icons
-│  │  ├─ ckeditor.svg  # The CKEditor 5 icon displayed in the toolbar.
-│  │  └─ **/*.svg      # All icon files should be saved here.
-│  └─ **/*.css         # All CSS files should be saved here.
-├─ .editorconfig
-├─ ...
-└─ README.md</code></pre>
-
-			<h3>Reporting issues</h3>
-			<p>
-				If you found a problem with CKEditor 5 or the package generator,
-				please, report an issue:
-			</p>
-			<ul>
-				<li>
-					<a
-						href="https://github.com/ckeditor/ckeditor5/issues/new/choose"
-						>CKEditor 5</a
-					>
-				</li>
-				<li>
-					<a
-						href="https://github.com/ckeditor/ckeditor5-package-generator/issues/new"
-						>The package generator</a
-					>
-				</li>
-			</ul>
+			<h2>Demo of all supported Admonition types:</h2>
 			<div
 				class="admonition default ck-widget"
 				name="default"
 				contenteditable="false"
 			>
-				<h2 class="admonition-title">Default</h2>
-				<div class="admonition-content"><p>&nbsp;</p></div>
+				<div class="admonition-title"><h3>Default</h3></div>
+				<div class="admonition-content">
+					<p>This one is the default (normal) one.</p>
+					<p>It does not have any icons.</p>
+				</div>
 			</div>
 			<div
 				class="admonition note ck-widget"
 				name="note"
 				contenteditable="false"
 			>
-				<h2 class="admonition-title">Note</h2>
-				<div class="admonition-content"><p>&nbsp;</p></div>
+				<div class="admonition-title"><h3>Note</h3></div>
+				<div class="admonition-content">
+					<p>
+						The <code>Note</code> type has a nice little icon
+						besides it.
+					</p>
+					<p>
+						By the way: Any content can go into these boxes, even
+						tables:
+					</p>
+					<figure class="table">
+						<table>
+							<tbody>
+								<tr>
+									<td>this</td>
+									<td>is</td>
+									<td>so</td>
+								</tr>
+								<tr>
+									<td>nice</td>
+									<td>&nbsp;</td>
+									<td>:)</td>
+								</tr>
+							</tbody>
+						</table>
+					</figure>
+				</div>
 			</div>
 			<div
 				class="admonition todo ck-widget"
 				name="todo"
 				contenteditable="false"
 			>
-				<h2 class="admonition-title">Todo</h2>
-				<div class="admonition-content"><p>&nbsp;</p></div>
+				<div class="admonition-title"><h3>Todo</h3></div>
+				<div class="admonition-content">
+					<p>The <code>Todo</code> type also has a nice icon.</p>
+					<ol>
+						<li>For example, to hold todo items</li>
+						<li>or something else, of course...</li>
+					</ol>
+				</div>
 			</div>
 			<div
 				class="admonition check ck-widget"
 				name="check"
 				contenteditable="false"
 			>
-				<h2 class="admonition-title">Check</h2>
-				<div class="admonition-content"><p>&nbsp;</p></div>
+				<div class="admonition-title"><h3>Check</h3></div>
+				<div class="admonition-content">
+					<ul>
+						<li>that is almost everthing</li>
+					</ul>
+				</div>
 			</div>
 			<div
 				class="admonition help ck-widget"
 				name="help"
 				contenteditable="false"
 			>
-				<h2 class="admonition-title">Help</h2>
+				<div class="admonition-title">
+					<h3>Help</h3>
+					<p>
+						Notice, how you can also have rich content in the
+						header?
+					</p>
+				</div>
 				<div class="admonition-content"><p>&nbsp;</p></div>
 			</div>
 			<div
@@ -175,7 +116,7 @@
 				name="tip"
 				contenteditable="false"
 			>
-				<h2 class="admonition-title">Tip</h2>
+				<div class="admonition-title"><h3>Note</h3></div>
 				<div class="admonition-content"><p>&nbsp;</p></div>
 			</div>
 			<div
@@ -183,7 +124,7 @@
 				name="example"
 				contenteditable="false"
 			>
-				<h2 class="admonition-title">Example</h2>
+				<div class="admonition-title"><h3>Example</h3></div>
 				<div class="admonition-content"><p>&nbsp;</p></div>
 			</div>
 			<div
@@ -191,7 +132,7 @@
 				name="quote"
 				contenteditable="false"
 			>
-				<h2 class="admonition-title">Quote</h2>
+				<div class="admonition-title"><h3>Quote</h3></div>
 				<div class="admonition-content"><p>&nbsp;</p></div>
 			</div>
 			<div
@@ -199,7 +140,7 @@
 				name="danger"
 				contenteditable="false"
 			>
-				<h2 class="admonition-title">Danger</h2>
+				<div class="admonition-title"><h3>Danger</h3></div>
 				<div class="admonition-content"><p>&nbsp;</p></div>
 			</div>
 			<div
@@ -207,7 +148,7 @@
 				name="warning"
 				contenteditable="false"
 			>
-				<h2 class="admonition-title">Warning</h2>
+				<div class="admonition-title"><h3>Warning</h3></div>
 				<div class="admonition-content"><p>&nbsp;</p></div>
 			</div>
 			<p>&nbsp;</p>

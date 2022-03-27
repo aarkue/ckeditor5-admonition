@@ -16,8 +16,6 @@ export default class AdmonitionEditing extends Plugin {
 	}
 
 	init() {
-		console.log('AdmonitionEditing#init() got called');
-
 		this._defineSchema();
 		this._defineConverters();
 
@@ -52,7 +50,7 @@ export default class AdmonitionEditing extends Plugin {
 			allowIn: 'admonition',
 
 			// Allow content which is allowed in blocks (i.e. text with attributes).
-			allowContentOf: '$block',
+			allowContentOf: '$root',
 		});
 
 		schema.register('admonitionContent', {
@@ -72,8 +70,6 @@ export default class AdmonitionEditing extends Plugin {
 			model: (viewElement, { writer: modelWriter }) => {
 				// Extract type/name
 				const name = viewElement.getAttribute('name');
-
-				console.log('upcast', { name });
 				return modelWriter.createElement('admonition', { name });
 			},
 			view: {
@@ -84,9 +80,7 @@ export default class AdmonitionEditing extends Plugin {
 		conversion.for('dataDowncast').elementToElement({
 			model: 'admonition',
 			view: (modelElement, { writer: viewWriter }) => {
-				console.log({ modelElement });
 				const name = modelElement.getAttribute('name');
-				console.log('dateDown', { name });
 				const section = viewWriter.createContainerElement('div', {
 					class: `admonition ${name}`,
 					name: name,
@@ -100,9 +94,7 @@ export default class AdmonitionEditing extends Plugin {
 		conversion.for('editingDowncast').elementToElement({
 			model: 'admonition',
 			view: (modelElement, { writer: viewWriter }) => {
-				console.log({ modelElement });
 				const name = modelElement.getAttribute('name');
-				console.log('editDown', { name });
 				const section = viewWriter.createContainerElement('div', {
 					class: `admonition ${name}`,
 					name: name,
@@ -117,21 +109,21 @@ export default class AdmonitionEditing extends Plugin {
 		conversion.for('upcast').elementToElement({
 			model: 'admonitionTitle',
 			view: {
-				name: 'h2',
+				name: 'div',
 				classes: 'admonition-title',
 			},
 		});
 		conversion.for('dataDowncast').elementToElement({
 			model: 'admonitionTitle',
 			view: {
-				name: 'h2',
+				name: 'div',
 				classes: 'admonition-title',
 			},
 		});
 		conversion.for('editingDowncast').elementToElement({
 			model: 'admonitionTitle',
 			view: (modelElement, { writer: viewWriter }) => {
-				const summary = viewWriter.createEditableElement('h2', {
+				const summary = viewWriter.createEditableElement('div', {
 					class: 'admonition-title',
 				});
 

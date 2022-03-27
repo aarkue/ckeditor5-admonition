@@ -23,15 +23,19 @@
 .admonition > p {
 	margin-top: 0.8rem;
 }
-
 .admonition > .admonition-title {
 	margin: 0 -1.2rem;
-	padding: 0.8rem 1rem 0.8rem 1rem;
+	padding: 0.0rem 3rem 0.0rem 3rem;
 	border-bottom: 1px solid rgba(68, 138, 255, 0.2);
 	background-color: rgba(68, 138, 255, 0.1);
-	font-weight: 700;
+	/* font-weight: 700; */
+	position: relative;
 }
 
+.admonition.default > .admonition-title {
+	padding-left: 0.5rem;
+	padding-right: 0.5rem;
+}
 .admonition > .admonition-title:before {
 	position: absolute;
 	left: 0.5rem;
@@ -44,10 +48,13 @@
 	height: 2rem;
 	background-size: contain;
 	background-repeat: no-repeat;
+	bottom: 50%;
+	transform: translateY(-50%);
+	top: 50%;
 }
 
 .admonition.note > .admonition-title {
-	padding-left: 3.3rem;
+	/*padding-left: 3.3rem;*/
 }
 
 .admonition.note > .admonition-title:before {
@@ -63,7 +70,7 @@
 .admonition.tip > .admonition-title {
 	background-color: rgba(0, 191, 165, 0.1);
 	border-bottom-color: rgba(0, 191, 165, 0.2);
-	padding-left: 3.3rem;
+	/*padding-left: 3.3rem;*/
 }
 
 .admonition.hint > .admonition-title:before,
@@ -80,7 +87,7 @@
 .admonition.todo > .admonition-title {
 	background-color: rgba(0, 184, 212, 0.1);
 	border-bottom-color: rgba(0, 184, 212, 0.2);
-	padding-left: 3.3rem;
+	/*padding-left: 3.3rem;*/
 }
 
 .admonition.info > .admonition-title:before,
@@ -99,7 +106,7 @@
 .admonition.done > .admonition-title {
 	background-color: rgba(0, 200, 83, 0.1);
 	border-bottom-color: rgba(0, 200, 83, 0.2);
-	padding-left: 3.3rem;
+	/*padding-left: 3.3rem;*/
 }
 
 .admonition.success > .admonition-title:before,
@@ -119,7 +126,7 @@
 .admonition.faq > .admonition-title {
 	background-color: rgba(162, 221, 23, 0.157);
 	border-bottom-color: rgba(208, 221, 23, 0.322);
-	padding-left: 3.3rem;
+	/*padding-left: 3.3rem;*/
 }
 
 .admonition.question > .admonition-title:before,
@@ -139,7 +146,7 @@
 .admonition.caution > .admonition-title {
 	background-color: rgba(248, 148, 18, 0.1);
 	border-bottom-color: rgba(255, 156, 27, 0.2);
-	padding-left: 3.3rem;
+	/*padding-left: 3.3rem;*/
 }
 
 .admonition.warning > .admonition-title:before,
@@ -158,7 +165,7 @@
 .admonition.missing > .admonition-title {
 	background-color: rgba(246, 86, 86, 0.1);
 	border-bottom-color: rgba(226, 71, 71, 0.2);
-	padding-left: 3.3rem;
+	/*padding-left: 3.3rem;*/
 }
 
 .admonition.danger > .admonition-title:before,
@@ -176,7 +183,7 @@
 .admonition.snippet > .admonition-title {
 	background-color: rgba(13, 198, 226, 0.1);
 	border-bottom-color: rgba(15, 199, 228, 0.2);
-	padding-left: 3.3rem;
+	/*padding-left: 3.3rem;*/
 }
 
 .admonition.example > .admonition-title:before,
@@ -193,7 +200,7 @@
 .admonition.cite > .admonition-title {
 	background-color: rgba(172, 170, 170, 0.1);
 	border-bottom-color: rgba(151, 151, 151, 0.2);
-	padding-left: 3.3rem;
+	/*padding-left: 3.3rem;*/
 }
 
 .admonition.quote > .admonition-title:before,

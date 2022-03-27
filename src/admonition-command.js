@@ -4,7 +4,6 @@ import { getRelatedAdmonition } from './admonition-utils';
 
 export class InsertAdmonitionCommand extends Command {
 	execute({ value }) {
-		console.log({ value });
 		this.editor.model.change((writer) => {
 			// Insert <admonition>*</admonition> at the current selection position
 			// in a way that will result in creating a valid model structure.
@@ -35,18 +34,17 @@ function createAdmonition(writer, value) {
 	// There must be at least one paragraph for the description to be editable.
 	// See https://github.com/ckeditor/ckeditor5/issues/1464.
 	writer.appendElement('paragraph', admonitionContent);
-
+	writer.appendElement('heading2', admonitionTitle);
+	// writer.appendText('Title',{'bold': 'true'},admonitionTitle)
 	return admonition;
 }
 
 export class AdmonitionChangeTypeCommand extends Command {
 	execute({ value }) {
-		console.log({ value });
 		this.editor.model.change((writer) => {
 			let admonitionEl = getRelatedAdmonition(
 				this.editor.model.document.selection
 			);
-			console.log({ admonitionEl });
 			if (!admonitionEl) {
 				return;
 			}
