@@ -1,7 +1,7 @@
 {
   "name": "@aarkue/ckeditor5-admonition",
-  "version": "33.0.1",
-  "description": "A plugin for CKEditor 5.",
+  "version": "33.0.2",
+  "description": "Admonition boxes for ckeditor5.",
   "keywords": [
     "ckeditor",
     "ckeditor5",

@@ -7,6 +7,9 @@
  .admonition-content{
 	overflow: auto;
  }
+ .admonition-title{
+	overflow: auto;
+ }
 
 
 .admonition {
