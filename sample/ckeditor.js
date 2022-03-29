@@ -96,6 +96,3 @@ ClassicEditor
 		CKEditorInspector.attach( editor );
 		window.console.log( 'CKEditor 5 is ready.', editor );
 	} )
-	.catch( err => {
-		window.console.error( err.stack );
-	} );

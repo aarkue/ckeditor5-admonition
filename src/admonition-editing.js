@@ -1,5 +1,6 @@
 import Plugin from '@ckeditor/ckeditor5-core/src/plugin';
 
+import ShiftEnter from '@ckeditor/ckeditor5-enter/src/shiftenter'
 import {
 	toWidget,
 	toWidgetEditable,
@@ -9,10 +10,11 @@ import {
 	InsertAdmonitionCommand,
 	AdmonitionChangeTypeCommand,
 } from './admonition-command';
+import {isAdmonition} from './admonition-utils'
 
 export default class AdmonitionEditing extends Plugin {
 	static get requires() {
-		return [Widget];
+		return [Widget, ShiftEnter];
 	}
 
 	init() {
@@ -28,6 +30,28 @@ export default class AdmonitionEditing extends Plugin {
 			'changeAdmonitionType',
 			new AdmonitionChangeTypeCommand(this.editor)
 		);
+
+
+		const editor = this.editor;
+		const viewDocument = this.editor.editing.view.document;
+		const selection = editor.model.document.selection;
+
+
+
+		this.listenTo( viewDocument, 'enter', ( evt, data ) => {
+			if ( !selection.isCollapsed || !('isSoft' in data) || !data.isSoft) {
+				return;
+			}
+			const positionParent = selection.getLastPosition().parent;
+			editor.model.change( writer => {
+				// writer.insertElement('paragraph',{},positionParent.parent.parent,'after')
+				writer.setSelection(positionParent.parent.parent,'after')
+				// writer.rename( positionParent, 'paragraph' );
+			})
+			data.preventDefault();
+			evt.stop();
+		}, { context: [ isAdmonition ] } );
+
 	}
 
 	_defineSchema() {
