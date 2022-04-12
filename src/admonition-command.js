@@ -8,7 +8,7 @@ export class InsertAdmonitionCommand extends Command {
 			// Insert <admonition>*</admonition> at the current selection position
 			// in a way that will result in creating a valid model structure.
 			let admonition = createAdmonition(writer, value);
-			this.editor.model.insertContent(admonition);
+			this.editor.model.insertContent(admonition,this.editor.model.document.selection.getLastPosition(),'after');
 		});
 	}
 
