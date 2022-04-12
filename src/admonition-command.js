@@ -1,5 +1,5 @@
 import Command from '@ckeditor/ckeditor5-core/src/command';
-
+import uid from '@ckeditor/ckeditor5-utils/src/uid';
 import { getRelatedAdmonition } from './admonition-utils';
 
 export class InsertAdmonitionCommand extends Command {
@@ -25,7 +25,7 @@ export class InsertAdmonitionCommand extends Command {
 }
 
 function createAdmonition(writer, value) {
-	const admonition = writer.createElement('admonition', { name: value });
+	const admonition = writer.createElement('admonition', { name: value, id:  uid()});
 	const admonitionTitle = writer.createElement('admonitionTitle');
 	const admonitionContent = writer.createElement('admonitionContent');
 

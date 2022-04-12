@@ -64,7 +64,7 @@ export default class AdmonitionEditing extends Plugin {
 
 			// Allow in places where other blocks are allowed (e.g. directly in the root).
 			allowWhere: '$block',
-			allowAttributes: ['name'],
+			allowAttributes: ['name','id'],
 		});
 
 		schema.register('admonitionTitle', {
@@ -94,7 +94,8 @@ export default class AdmonitionEditing extends Plugin {
 			model: (viewElement, { writer: modelWriter }) => {
 				// Extract type/name
 				const name = viewElement.getAttribute('name');
-				return modelWriter.createElement('admonition', { name });
+				const id = viewElement.getAttribute('id');
+				return modelWriter.createElement('admonition', { name, id });
 			},
 			view: {
 				name: 'div',
@@ -105,9 +106,11 @@ export default class AdmonitionEditing extends Plugin {
 			model: 'admonition',
 			view: (modelElement, { writer: viewWriter }) => {
 				const name = modelElement.getAttribute('name');
+				const id = modelElement.getAttribute('id');
 				const section = viewWriter.createContainerElement('div', {
 					class: `admonition ${name}`,
 					name: name,
+					id: id
 				});
 
 				return toWidget(section, viewWriter, {
@@ -119,9 +122,11 @@ export default class AdmonitionEditing extends Plugin {
 			model: 'admonition',
 			view: (modelElement, { writer: viewWriter }) => {
 				const name = modelElement.getAttribute('name');
+				const id = modelElement.getAttribute('id');
 				const section = viewWriter.createContainerElement('div', {
 					class: `admonition ${name}`,
 					name: name,
+					id: id
 				});
 
 				return toWidget(section, viewWriter, {
