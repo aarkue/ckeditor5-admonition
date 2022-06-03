@@ -39,23 +39,24 @@ export default class AdmonitionEditing extends Plugin {
 
 
 		this.listenTo( viewDocument, 'enter', ( evt, data ) => {
-			if ( !selection.isCollapsed || !('isSoft' in data) || !data.isSoft) {
+			if ( !selection.isCollapsed ) {
 				return;
 			}
 			const positionParent = selection.getLastPosition().parent;
-			editor.model.change( writer => {
-				// writer.insertElement('paragraph',{},positionParent.parent.parent,'after')
-				writer.setSelection(positionParent.parent.parent,'after')
-				// writer.rename( positionParent, 'paragraph' );
-			})
-			data.preventDefault();
-			evt.stop();
+
+			if ( positionParent.isEmpty && 'isSoft' in data && !data.isSoft ) {
+				editor.model.change( writer => {
+					writer.setSelection(positionParent.parent.parent,'after')
+					writer.remove(positionParent);
+				})
+				data.preventDefault();
+				evt.stop();
+			}
 		}, { context: [ isAdmonition ] } );
 
 	}
 
 	_defineSchema() {
-		// ADDED
 		const schema = this.editor.model.schema;
 
 		schema.register('admonition', {
