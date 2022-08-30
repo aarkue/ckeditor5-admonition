@@ -62,7 +62,7 @@ export default class AdmonitionEditing extends Plugin {
 		schema.register('admonition', {
 			// Behaves like a self-contained object (e.g. an image).
 			isObject: true,
-			allowWhere: ['$root','$block','$text'],
+			allowWhere: ['$root','$block'],
 			allowAttributes: ['name','id'],
 			isLimit: true,
 			isBlock: true
@@ -70,7 +70,6 @@ export default class AdmonitionEditing extends Plugin {
 
 		schema.register('admonitionTitle', {
 			// Cannot be split or left by the caret.
-			isLimit: true,
 
 			allowIn: 'admonition',
 
@@ -80,8 +79,7 @@ export default class AdmonitionEditing extends Plugin {
 
 		schema.register('admonitionContent', {
 			// Cannot be split or left by the caret.
-			isLimit: true,
-
+			
 			allowIn: 'admonition',
 
 			// Allow content which is allowed in the root (e.g. paragraphs).
@@ -116,6 +114,7 @@ export default class AdmonitionEditing extends Plugin {
 
 				return toWidget(section, viewWriter, {
 					label: 'admonition widget',
+					hasSelectionHandle: true
 				});
 			},
 		});
@@ -132,6 +131,7 @@ export default class AdmonitionEditing extends Plugin {
 
 				return toWidget(section, viewWriter, {
 					label: 'admonition widget',
+					hasSelectionHandle: true
 				});
 			},
 		});
