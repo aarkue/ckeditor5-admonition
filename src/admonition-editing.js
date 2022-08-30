@@ -114,7 +114,6 @@ export default class AdmonitionEditing extends Plugin {
 
 				return toWidget(section, viewWriter, {
 					label: 'admonition widget',
-					hasSelectionHandle: true
 				});
 			},
 		});
@@ -131,7 +130,6 @@ export default class AdmonitionEditing extends Plugin {
 
 				return toWidget(section, viewWriter, {
 					label: 'admonition widget',
-					hasSelectionHandle: true
 				});
 			},
 		});
