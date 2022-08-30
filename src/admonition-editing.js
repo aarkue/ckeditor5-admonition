@@ -62,8 +62,10 @@ export default class AdmonitionEditing extends Plugin {
 		schema.register('admonition', {
 			// Behaves like a self-contained object (e.g. an image).
 			isObject: true,
-			allowWhere: '$text',
+			allowWhere: ['$root','$block','$text'],
 			allowAttributes: ['name','id'],
+			isLimit: true,
+			isBlock: true
 		});
 
 		schema.register('admonitionTitle', {
@@ -83,7 +85,7 @@ export default class AdmonitionEditing extends Plugin {
 			allowIn: 'admonition',
 
 			// Allow content which is allowed in the root (e.g. paragraphs).
-			allowContentOf: '$root',
+			allowContentOf: '$root'
 		});
 	}
 	_defineConverters() {
