@@ -7,8 +7,10 @@ export class InsertAdmonitionCommand extends Command {
 		this.editor.model.change((writer) => {
 			// Insert <admonition>*</admonition> at the current selection position
 			// in a way that will result in creating a valid model structure.
-			let admonition = createAdmonition(writer, value);
-			this.editor.model.insertContent(admonition,this.editor.model.document.selection.getLastPosition(),'after');
+			let adComponents = this.createAdmonition(writer, value);
+			const r = this.editor.model.insertContent(adComponents.admonition,this.editor.model.document.selection.getLastPosition(),'before');
+
+			writer.setSelection(adComponents.admonitionTitle,'in')
 		});
 	}
 
@@ -22,9 +24,8 @@ export class InsertAdmonitionCommand extends Command {
 
 		this.isEnabled = allowedIn !== null;
 	}
-}
 
-function createAdmonition(writer, value) {
+ createAdmonition(writer, value) {
 	const admonition = writer.createElement('admonition', { name: value, id:  uid()});
 	const admonitionTitle = writer.createElement('admonitionTitle');
 	const admonitionContent = writer.createElement('admonitionContent');
@@ -32,12 +33,16 @@ function createAdmonition(writer, value) {
 	writer.append(admonitionTitle, admonition);
 	writer.append(admonitionContent, admonition);
 
+
 	// There must be at least one paragraph for the description to be editable.
 	// See https://github.com/ckeditor/ckeditor5/issues/1464.
 	writer.appendElement('paragraph', admonitionContent);
-	writer.appendElement('heading2', admonitionTitle);
+	const h = writer.appendElement('heading2', admonitionTitle);
+
 	// writer.appendText('Title',{'bold': 'true'},admonitionTitle)
-	return admonition;
+	// this.editor.model.createSelection(admonitionTitle,'on')
+	return {admonition: admonition, admonitionTitle: admonitionTitle, admonitionContent: admonitionContent};
+}
 }
 
 export class AdmonitionChangeTypeCommand extends Command {
