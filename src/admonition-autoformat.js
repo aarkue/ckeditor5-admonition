@@ -26,7 +26,7 @@ export default class AdmonitionAutoformat extends Plugin {
             blockAutoformatEditing(this.editor,this,/^\!\!\[*\! (.+) $/, (x) => {
               console.log(x.match[1])
               if(admonitionTypes.includes(x.match[1])){
-                this.editor.execute('insertAdmonition',{value: x.match[1] ?? 'note'});
+                this.editor.execute('insertAdmonition',{value: x.match[1] || 'note'});
               }else{
                 this.editor.execute('insertAdmonition',{value: 'note'});
               }
