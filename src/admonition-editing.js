@@ -70,7 +70,7 @@ export default class AdmonitionEditing extends Plugin {
 
 		schema.register('admonitionTitle', {
 			// Cannot be split or left by the caret.
-
+			isLimit: true,
 			allowIn: 'admonition',
 
 			// Allow content which is allowed in blocks (i.e. text with attributes).
@@ -79,7 +79,7 @@ export default class AdmonitionEditing extends Plugin {
 
 		schema.register('admonitionContent', {
 			// Cannot be split or left by the caret.
-			
+			isLimit: true,
 			allowIn: 'admonition',
 
 			// Allow content which is allowed in the root (e.g. paragraphs).

@@ -54,6 +54,7 @@ export class AdmonitionChangeTypeCommand extends Command {
 			if (!admonitionEl) {
 				return;
 			}
+			writer.removeAttribute('name',admonitionEl);
 			writer.setAttribute('name', value, admonitionEl);
 			let newEl = writer.cloneElement(admonitionEl, true);
 			writer.setSelection(admonitionEl, 'on');
